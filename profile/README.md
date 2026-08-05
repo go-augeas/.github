@@ -17,7 +17,7 @@
 
 ---
 
-go-augeas is a pure-Go (CGO_ENABLED=0) implementation of the core of Augeas, the configuration-editing tool from the Puppet ecosystem. It models configuration files as an ordered tree, exposes an XPath-like path language to query and edit that tree, and uses lenses to translate between the tree and concrete file syntax (/etc/hosts, /etc/fstab, shell vars, INI). Load and save go through an injectable FileSystem seam, so parsing and error branches are covered deterministically without touching the disk. It imports only the Go standard library, holds 100% test coverage, and cross-compiles to the six 64-bit Go targets and WebAssembly.
+go-augeas is a pure-Go (CGO_ENABLED=0) implementation of the core of Augeas, the configuration-editing tool from the Puppet ecosystem. It models configuration files as an ordered tree, exposes an XPath-like path language to query and edit that tree, and uses lenses to translate between the tree and concrete file syntax. A from-scratch pure-Go interpreter for the Augeas `.aug` lens DSL reads the entire embedded upstream lens corpus (232 modules) plus five original contrib lenses (Wireguard, Rclone, Caddyfile, Nftables, Unbound); write-back through those lenses is verified correct internally but not yet exposed via the public API. Load and save go through an injectable FileSystem seam, so parsing and error branches are covered deterministically without touching the disk. It imports only the Go standard library, holds 100% test coverage, and cross-compiles to the six 64-bit Go targets and WebAssembly.
 
 ## Repositories
 
